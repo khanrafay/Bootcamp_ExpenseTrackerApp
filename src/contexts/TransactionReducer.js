@@ -9,6 +9,10 @@ const TransactionReducer = ((state, action) => {
             console.log(copyState);
             return [...copyState];
         }
+        case "EDIT_TRANSACTION": {
+            let copyState = state;
+            
+        }
         default:
             return state;
     }
