@@ -1,38 +1,68 @@
-.App {
+body{
+  background-color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.App{
+  width: 800px;
+  margin: 0 auto;
   text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.current-balance{
+  background-color: white;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 1px 1px grey;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.transaction-difference{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  box-shadow: 1px 1px grey;
 }
 
-.App-link {
-  color: #61dafb;
+.transaction-list{
+  list-style: none;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transaction-list li{
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  width: 300px;
+  margin:0 auto;
+  padding:10px;
+  box-shadow: 1px 1px grey;
+  
+}
+
+.transaction-form{
+  width: 300px;
+  margin:0 auto;
+  padding:10px;
+  
+}
+
+.transaction-form input{
+  padding:5px;
+}
+
+.btnAdd{
+  margin-top:5px;
+ 
+}
+
+.btnAdd button{
+  padding:10px 10px;
+  background-color: #28a745;
+  border:none;
 }
