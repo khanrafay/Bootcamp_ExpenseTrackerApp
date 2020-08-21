@@ -11,13 +11,14 @@ const AddTransaction = () => {
     const { transaction, addTransaction } = useContext(TransactionContext);
 
     let transactionValue = isIncome === 'Income' ? Number(amount) : Number(-amount)
-    
+
 
     const handleAddition = (e) => {
         e.preventDefault();
         setDescription("");
         setAmount("");
         addTransaction({
+            id: transaction.length + 1,
             description: description,
             amount: transactionValue
         })
@@ -45,7 +46,7 @@ const AddTransaction = () => {
             </label>
             <br />
             <br />
-            <label>Description</label>
+           
             <div>
                 <input type="text"
                     placeholder="Enter description"
@@ -53,7 +54,7 @@ const AddTransaction = () => {
                     value={description}
                     required />
             </div>
-            <label>Amount</label>
+          <br/>
             <div>
                 <input type="text"
                     placeholder="Enter amount"
@@ -61,6 +62,7 @@ const AddTransaction = () => {
                     value={amount}
                     required />
             </div>
+            <br/>
             <div className="btnAdd">
                 <button>Add Transaction</button>
             </div>

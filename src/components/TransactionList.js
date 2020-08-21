@@ -8,13 +8,15 @@ const TransactionList = () => {
     console.log(transaction);
     return (<div>
         <h3>Transaction History</h3>
-        <ul className="transaction-list">
-            {transaction.map((transaction, index) =>
-
-                <Transaction transaction={transaction} id={index} />
-
-            )}
-        </ul>
+        <div>
+            <ul className="transaction-list">
+                {transaction.map((transaction) =>
+                    <li className={transaction.amount > 0 ? 'border-income' : 'border-expense'}>
+                        <Transaction transaction={transaction} id={transaction.id} />
+                    </li>
+                )}
+            </ul>
+        </div>
     </div>);
 }
 

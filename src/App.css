@@ -4,14 +4,16 @@ body{
 }
 
 .App{
-  width: 800px;
+  width: 500px;
   margin: 0 auto;
   text-align: center;
+  background-color: #d1ecf1;
+  padding:10px;
 
 }
 
 .current-balance{
-  background-color: white;
+  background-color: #f5c6cb;
   width: 400px;
   margin: 0 auto;
   text-align: center;
@@ -25,7 +27,7 @@ body{
   width: 400px;
   margin: 0 auto;
   text-align: center;
-  background-color: white;
+  background-color: #f5c6cb;
   box-shadow: 1px 1px grey;
 }
 
@@ -37,11 +39,12 @@ body{
 .transaction-list li{
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: #f5c6cb;
   width: 300px;
   margin:0 auto;
   padding:10px;
   box-shadow: 1px 1px grey;
+  margin-bottom: 10px;
   
 }
 
@@ -65,4 +68,16 @@ body{
   padding:10px 10px;
   background-color: #28a745;
   border:none;
+}
+
+.border-expense{
+  border-left:5px solid #dc3545;
+}
+
+.border-income{
+  border-left:5px solid #17a2b8;
+}
+
+.transaction-list input{
+  width:50px;
 }

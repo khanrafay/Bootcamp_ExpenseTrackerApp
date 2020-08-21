@@ -4,9 +4,9 @@ import { TransactionContext } from '../contexts/TransactionContext';
 
 const Transaction = ({ transaction, id }) => {
 
-    let { removeTransaction } = useContext(TransactionContext);
-    const [editDescription, setDescription] = useState("");
-    const [editAmount, setAmount] = useState(0);
+    let { removeTransaction, updateTransaction } = useContext(TransactionContext);
+    const [editDescription, setDescription] = useState(transaction.description);
+    const [editAmount, setAmount] = useState(transaction.amount);
     const [isEdit, setEdit] = useState(false);
 
     const handleRemove = (id) => {
@@ -15,13 +15,22 @@ const Transaction = ({ transaction, id }) => {
         })
     }
 
+    const handleUpdate = (id) => {
+        updateTransaction({
+            id: id,
+            description: editDescription,
+            amount: Number(editAmount)
+        })
+        setEdit(false);
+    }
+
     const descriptionText = (<input type="text"
-        value={transaction.description}
+        value={editDescription}
         onChange={(e) => setDescription(e.target.value)}
     />);
 
     const amountText = (<input type="text"
-        value={transaction.amount}
+        value={editAmount}
         onChange={(e) => setAmount(e.target.value)}
 
     />);
@@ -31,12 +40,10 @@ const Transaction = ({ transaction, id }) => {
         setEdit(true)
     }
 
-    const handleUpdate = (id) => {
-        setEdit(false);
-    }
+
     return (
 
-        <li >
+        <>
             <span>
                 {!isEdit && transaction.description}
                 {isEdit && descriptionText}
@@ -50,7 +57,7 @@ const Transaction = ({ transaction, id }) => {
             {!isEdit ? (<button onClick={() => { handleEdit(id) }}>Edit</button>)
                 : (<button onClick={() => { handleUpdate(id) }}>Update</button>)}
 
-        </li>
+        </>
 
     );
 }
